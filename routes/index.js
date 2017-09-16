@@ -9,7 +9,7 @@ router.use(bodyParser.urlencoded({
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-        res.render('index', { title: 'Medium Parser Docs' });
+        res.render('index', { title: 'Medium Parser Docs', url: req.protocol + '://' + req.get('host') + req.originalUrl });
     });
 
 router.post("/", medium.parse);

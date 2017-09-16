@@ -1,11 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+  <title><%= title %></title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Medium Parser</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <br>
+  <br>
+  <br>
+  <div class="starter-template">
+    <h1>Medium Parser</h1>
+    <p class="lead">Use this api in the following way</p>
+  </div>
+
+  <div class="well">
+    <div class="list-group">
+      <div class="list-group-item">
+        <b>URL:</b> <%= url %>
+      </div>
+      <div class="list-group-item">
+        <b>Method:</b> POST
+      </div>
+      <div class="list-group-item">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <td>Item</td>
+            <td>Description</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>url</td><td>URL of medium xml feed for example <a href="https://medium.com/feed/venture-garden-group">https://medium.com/feed/venture-garden-group</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="list-group-item">
+        <b>Response</b>
+        <hr>
+        <pre class="prettyprint">
+          [
+            {
+              "title": "#PEBECHack",
+              "link": "https://medium.com/venture-garden-group/pebechack-e6180b621a06?source=rss----a2724bbff187---4",
+              "guid": {
+                "isPermaLink": "false",
+                "$t": "https://medium.com/p/e6180b621a06"
+              },
+              "category": [
+                "hackathons",
+                "government"
+              ],
+              "dc:creator": "Caleb Mbakwe",
+              "pubDate": "Sun, 25 Jun 2017 09:33:05 GMT",
+              "atom:updated": "2017-06-25T15:12:38.766Z",
+              "content:encoded": "What us the website of the NSCDC? The website of the NSCDC is ww.nscdc ..."
+            },
+            {
+            "title": "Remote Software Internship",
+            "link": "https://medium.com/venture-garden-group/remote-software-internship-20c24549f7e5?source=rss----a2724bbff187---4",
+            "guid": {
+              "isPermaLink": "false",
+              "$t": "https://medium.com/p/20c24549f7e5"
+            },
+              "category": [
+                "internships",
+                "startup",
+                "remote"
+              ],
+              "dc:creator": "Caleb Mbakwe",
+              "pubDate": "Tue, 21 Mar 2017 17:47:16 GMT",
+              "atom:updated": "2017-03-22T08:44:56.065Z",
+              "content:encoded": "What tool do you use to hammer a nail? A. Hammer. B. Nail. .... This is a question that ..... "
+            }
+          ]
+        </pre>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.container -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
 </html>
